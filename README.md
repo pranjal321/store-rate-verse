@@ -2,17 +2,14 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f955ef1d-14a6-442c-a88f-e684c584ceb5
+**URL**: https://store-rate-verse.lovable.app/
+## Workflow
+
+![14 04 2025_02 30 50_REC](https://github.com/user-attachments/assets/05841143-9eab-4d23-ae8f-b32a23574585)
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f955ef1d-14a6-442c-a88f-e684c584ceb5) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -35,21 +32,6 @@ npm i
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
 ## What technologies are used for this project?
 
 This project is built with:
@@ -59,15 +41,56 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Nest.js
+- Supabase (Postgres)
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/f955ef1d-14a6-442c-a88f-e684c584ceb5) and click on Share -> Publish.
+🧰Tools You Can Use:
+Component	Recommended Option(s)
+Frontend (React)	Vercel / Netlify / Render
+Backend (NestJS/Express/Loopback)	Render / Railway / Fly.io / DigitalOcean
+Database (PostgreSQL/MySQL)	Supabase (Postgres) / PlanetScale (MySQL) / Railway / Render
+Domain	Namecheap / GoDaddy / Cloudflare (optional, for custom domain)
+🛠️ Step-by-Step Deployment
+1. Frontend Deployment (React on Vercel)
+On Vercel:
+Push your React frontend code to GitHub.
 
-## Can I connect a custom domain to my Lovable project?
+Go to https://vercel.com and sign in with GitHub.
 
-Yes it is!
+Click “New Project” and import your repo.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Set environment variables (e.g., REACT_APP_API_URL).
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Click Deploy.
+
+2. Backend Deployment (NestJS)
+On Render:
+Push your backend to GitHub.
+
+Go to https://render.com, sign in.
+
+Click New Web Service, choose your backend repo.
+
+Select Node environment, set build command (npm run build) and start command (npm run start:prod).
+
+Add environment variables (e.g., DB credentials, JWT secrets).
+
+Deploy.
+
+✅ Don’t forget to:
+
+Enable HTTPS (Render does it by default).
+
+Use .env to load config (use dotenv in Node/Nest).
+
+3. Database Setup
+Option A: PostgreSQL with Supabase
+Go to https://supabase.com, sign up.
+
+Create a new project → You’ll get DB URL, user, password.
+
+Use this info in your backend .env.
+
+
