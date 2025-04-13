@@ -47,7 +47,7 @@ import {
   Search, 
   Edit, 
   Trash2,
-  Store as StoreIcon,
+  Store,
   Eye
 } from 'lucide-react';
 
