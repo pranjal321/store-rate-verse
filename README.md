@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to Store-rate-verse project
 
 ## Project info
 
