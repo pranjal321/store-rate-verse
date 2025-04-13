@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Table,
@@ -52,6 +51,7 @@ import {
   Globe,
   Star
 } from 'lucide-react';
+import StarHalf from '@/components/StarHalf';
 
 // Mock stores data
 const mockStores = [
