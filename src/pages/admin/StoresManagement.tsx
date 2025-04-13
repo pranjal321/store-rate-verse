@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Table,
@@ -350,7 +349,7 @@ const StoresManagement = () => {
               ) : (
                 <TableRow>
                   <TableCell colSpan={6} className="text-center py-8">
-                    <StoreIcon className="h-12 w-12 mx-auto mb-3 text-gray-300" />
+                    <Store className="h-12 w-12 mx-auto mb-3 text-gray-300" />
                     <p className="text-gray-500">No stores found</p>
                   </TableCell>
                 </TableRow>
@@ -508,7 +507,7 @@ const StoresManagement = () => {
             <div className="space-y-4">
               <div className="flex flex-col items-center mb-4">
                 <div className="bg-blue-100 p-4 rounded-full mb-3">
-                  <StoreIcon className="h-12 w-12 text-blue-700" />
+                  <Store className="h-12 w-12 text-blue-700" />
                 </div>
                 <div className="text-center">
                   <h3 className="text-xl font-bold">{selectedStore.name}</h3>

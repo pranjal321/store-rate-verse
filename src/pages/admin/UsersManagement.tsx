@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Table,
@@ -51,7 +50,6 @@ import {
   Eye
 } from 'lucide-react';
 
-// Mock users data
 const mockUsers = [
   { id: 1, name: 'John Doe', email: 'john.doe@example.com', address: '123 Main St, Anytown, CA 94111', role: 'user', storesRated: 5 },
   { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', address: '456 Oak Ave, Somewhere, NY 10001', role: 'user', storesRated: 8 },
@@ -84,7 +82,6 @@ const UsersManagement = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  // Filter users based on search term
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredUsers(users);
@@ -103,25 +100,21 @@ const UsersManagement = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    // Name validation: 20-60 characters
     if (formData.name.length < 20) {
       newErrors.name = 'Name must be at least 20 characters';
     } else if (formData.name.length > 60) {
       newErrors.name = 'Name cannot exceed 60 characters';
     }
 
-    // Address validation: Max 400 characters
     if (formData.address.length > 400) {
       newErrors.address = 'Address cannot exceed 400 characters';
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
 
-    // Password validation for new users
     if (!isEditUserOpen && formData.password) {
       const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
       if (!passwordRegex.test(formData.password)) {
@@ -152,7 +145,7 @@ const UsersManagement = () => {
       email: user.email,
       address: user.address,
       role: user.role,
-      password: '', // Don't include password for edit
+      password: '',
     });
     setErrors({});
     setIsEditUserOpen(true);
@@ -174,7 +167,6 @@ const UsersManagement = () => {
     if (!validateForm()) return;
 
     if (isAddUserOpen) {
-      // Add new user
       const newUser = {
         id: users.length + 1,
         ...formData,
@@ -183,7 +175,6 @@ const UsersManagement = () => {
       setUsers([...users, newUser]);
       toast({ title: 'Success', description: 'User has been added successfully' });
     } else if (isEditUserOpen && selectedUser) {
-      // Update existing user
       const updatedUsers = users.map(user => 
         user.id === selectedUser.id ? { ...user, ...formData } : user
       );
@@ -191,7 +182,6 @@ const UsersManagement = () => {
       toast({ title: 'Success', description: 'User has been updated successfully' });
     }
 
-    // Close dialogs
     setIsAddUserOpen(false);
     setIsEditUserOpen(false);
   };
@@ -231,7 +221,6 @@ const UsersManagement = () => {
         </Button>
       </div>
 
-      {/* Search & Filters */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
         <Input
@@ -242,7 +231,6 @@ const UsersManagement = () => {
         />
       </div>
 
-      {/* Users Table */}
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <Table>
@@ -299,7 +287,6 @@ const UsersManagement = () => {
         </div>
       </Card>
 
-      {/* Add/Edit User Dialog */}
       <Dialog open={isAddUserOpen || isEditUserOpen} onOpenChange={(open) => {
         if (!open) {
           setIsAddUserOpen(false);
@@ -426,7 +413,6 @@ const UsersManagement = () => {
         </DialogContent>
       </Dialog>
 
-      {/* View User Dialog */}
       <Dialog open={isViewUserOpen} onOpenChange={setIsViewUserOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
@@ -438,7 +424,7 @@ const UsersManagement = () => {
               <div className="flex flex-col items-center mb-4">
                 <div className="bg-blue-100 p-4 rounded-full mb-3">
                   {selectedUser.role === 'store_owner' ? (
-                    <StoreIcon className="h-12 w-12 text-blue-700" />
+                    <Store className="h-12 w-12 text-blue-700" />
                   ) : (
                     <User className="h-12 w-12 text-blue-700" />
                   )}
@@ -482,7 +468,6 @@ const UsersManagement = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Delete Confirmation */}
       <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
