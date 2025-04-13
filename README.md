@@ -4,8 +4,9 @@
 
 **URL**: https://store-rate-verse.lovable.app/
 ## Workflow
+![14 04 2025_02 45 25_REC](https://github.com/user-attachments/assets/1b117c98-9202-40f7-93ba-f139d3d312aa)
 
-![14 04 2025_02 34 07_REC](https://github.com/user-attachments/assets/580eaf04-8246-4408-a580-d021ec8ee638)
+
 
 ## How can I edit this code?
 
@@ -93,16 +94,16 @@ Create a new project → You’ll get DB URL, user, password.
 
 Use this info in your backend .env.
 ## Preview
-Start.
+1.Start.
 ![14 04 2025_02 34 39_REC](https://github.com/user-attachments/assets/810c6d6c-a2a4-4b93-ba2f-44902474c8e9)
 
-Admin Dashboard
+2.Admin Dashboard
 ![14 04 2025_02 35 36_REC](https://github.com/user-attachments/assets/da6df145-6741-493d-8b4c-4865f7d5e79a)
 
-Store Dashboard
+3.Store Dashboard
 ![14 04 2025_02 36 35_REC](https://github.com/user-attachments/assets/5c5f5d64-c2de-4572-b97f-fb62e1501b04)
 
-User Dashboard
+4.User Dashboard
 ![14 04 2025_02 37 13_REC](https://github.com/user-attachments/assets/132954f2-8438-4dd7-908b-398472aff6d4)
 
 
